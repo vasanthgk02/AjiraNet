@@ -66,12 +66,12 @@ class BuildNetWork {
 
 			ArrayList<String> currPath = peek.path;
 			int currDist = peek.dist;
-
+			
+			if(currDist == 0) continue;				 
+			
 			String currNode = currPath.get(currPath.size() - 1);
 
-			if (currNode.equals(node2)) {
-				return currPath;
-			}
+			if (currNode.equals(node2)) return currPath;
 
 			for (String adj : graph.get(currNode)) {
 				if (visited.get(adj) == false) {
